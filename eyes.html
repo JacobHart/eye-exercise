@@ -24,8 +24,8 @@
       makeEye()
       function makeEye() {
         let eyes = document.getElementById('eyes');
-        let positionX = Math.random() * window.innerWidth - 240;
-        let positionY = Math.random() * window.innerHeight - window.innerHeight / 2 - 120;
+        let positionX = 0.7 * Math.random() * window.innerWidth - 240 + 0.15 * window.innerWidth;
+        let positionY = 0.7 * Math.random() * window.innerHeight - window.innerHeight / 2 - 120+ 0.15 * window.innerHeight;
         for (let i = 0; i < 2; i++) {
           let neweye = document.createElement('div');
           let neweyeball = document.createElement('div');
