@@ -2,7 +2,7 @@
   <head> </head>
   <link rel="stylesheet" href="./eyes.css" />
   <body>
-    <button onclick='makeEye()' width='200' height='30'>Add Eye</button>
+    <button onclick='makeEye()' width='200' height='30'>Let the games begin</button>
     <div class="eyes" id="eyes">
     </div>
   </body>
@@ -38,8 +38,9 @@
       if (balls.length > 6) { 
         eyes.removeChild(eyes.firstElementChild);  
         eyes.removeChild(eyes.firstElementChild);  
-        
       };
+
+      setTimeout(makeEye, 2000);
     }
 
   </script>
