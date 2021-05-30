@@ -2,13 +2,8 @@
   <head> </head>
   <link rel="stylesheet" href="./eyes.css" />
   <body>
-    <div class="eyes">
-      <div class="eye">
-        <div class="ball"></div>
-      </div>
-      <div class="eye">
-        <div class="ball"></div>
-      </div>
+    <button onclick='makeEye()' width='200' height='30'>Add Eye</button>
+    <div class="eyes" id="eyes">
     </div>
   </body>
   <script>
@@ -23,5 +18,17 @@
         balls[i].transfoorm = "translate(-" + x + ",-" + y + ")";
       }
     };
+
+    function makeEye() {
+      let eyes = document.getElementById('eyes');
+      let neweye = document.createElement('div');
+      let neweyeball = document.createElement('div');
+      neweye.className = "eye"
+      neweye.style.left = Math.random() * window.innerWidth - 240;
+      neweye.style.top = Math.random() * window.innerHeight - 540;
+      neweyeball.className = "ball"
+      eyes.appendChild(neweye).appendChild(neweyeball);
+    }
+
   </script>
 </html>
