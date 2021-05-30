@@ -28,6 +28,11 @@
       neweye.style.top = Math.random() * window.innerHeight - 540;
       neweyeball.className = "ball"
       eyes.appendChild(neweye).appendChild(neweyeball);
+
+      // remove eye when there are more than 6 eyes
+      if (balls.length > 6) { 
+        eyes.removeChild(eyes.childNodes[0]);   
+      };
     }
 
   </script>
