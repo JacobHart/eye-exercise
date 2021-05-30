@@ -2,7 +2,7 @@
   <head> </head>
   <link rel="stylesheet" href="./eyes.css" />
   <body>
-    <button onclick='makeEye()' width='200' height='30'>Let the games begin</button>
+    <button id="button" onclick='startGame()' width='200' height='30'>Let the games begin</button>
     <div class="eyes" id="eyes">
     </div>
   </body>
@@ -19,28 +19,31 @@
       }
     };
 
-    function makeEye() {
-      let eyes = document.getElementById('eyes');
-      
-      let positionX = Math.random() * window.innerWidth - 240;
-      let positionY = Math.random() * window.innerHeight - window.innerHeight / 2 - 120;
-      for (let i = 0; i < 2; i++) {
-        let neweye = document.createElement('div');
-        let neweyeball = document.createElement('div');
-        neweye.className = "eye"
-        neweye.style.left = positionX + i * 150;
-        neweye.style.top = positionY;
-        neweyeball.className = "ball"
-        eyes.appendChild(neweye).appendChild(neweyeball);
+    function startGame(){
+      document.getElementById('button').style.display = "none";
+      makeEye()
+      function makeEye() {
+        let eyes = document.getElementById('eyes');
+        let positionX = Math.random() * window.innerWidth - 240;
+        let positionY = Math.random() * window.innerHeight - window.innerHeight / 2 - 120;
+        for (let i = 0; i < 2; i++) {
+          let neweye = document.createElement('div');
+          let neweyeball = document.createElement('div');
+          neweye.className = "eye"
+          neweye.style.left = positionX + i * 150;
+          neweye.style.top = positionY;
+          neweyeball.className = "ball"
+          eyes.appendChild(neweye).appendChild(neweyeball);
+        }
+
+        // remove eye when there are more than 6 eyes
+        if (balls.length > 6) { 
+          eyes.removeChild(eyes.firstElementChild);  
+          eyes.removeChild(eyes.firstElementChild);  
+        };
+
+        setTimeout(makeEye, 2000);
       }
-
-      // remove eye when there are more than 6 eyes
-      if (balls.length > 6) { 
-        eyes.removeChild(eyes.firstElementChild);  
-        eyes.removeChild(eyes.firstElementChild);  
-      };
-
-      setTimeout(makeEye, 2000);
     }
 
   </script>
