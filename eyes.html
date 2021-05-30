@@ -24,11 +24,6 @@
       
       let positionX = Math.random() * window.innerWidth - 240;
       let positionY = Math.random() * window.innerHeight - window.innerHeight / 2 - 120;
-      if (balls.length > 4) { 
-        eyes.removeChild(eyes.childNodes[1]);  
-        eyes.removeChild(eyes.childNodes[0]);  
-        
-      };
       for (let i = 0; i < 2; i++) {
         let neweye = document.createElement('div');
         let neweyeball = document.createElement('div');
@@ -40,7 +35,11 @@
       }
 
       // remove eye when there are more than 6 eyes
-
+      if (balls.length > 6) { 
+        eyes.removeChild(eyes.firstElementChild);  
+        eyes.removeChild(eyes.firstElementChild);  
+        
+      };
     }
 
   </script>
