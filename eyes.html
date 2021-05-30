@@ -21,17 +21,19 @@
 
     function makeEye() {
       let eyes = document.getElementById('eyes');
-      let neweye = document.createElement('div');
-      let neweyeball = document.createElement('div');
-      neweye.className = "eye"
-      neweye.style.left = Math.random() * window.innerWidth - 240;
-      neweye.style.top = Math.random() * window.innerHeight - window.innerHeight / 2 - 120;
-      neweyeball.className = "ball"
-      eyes.appendChild(neweye).appendChild(neweyeball);
-
+      for (let i = 0; i < 2; i++) {
+        let neweye = document.createElement('div');
+        let neweyeball = document.createElement('div');
+        neweye.className = "eye"
+        neweye.style.left = Math.random() * window.innerWidth - 240;
+        neweye.style.top = Math.random() * window.innerHeight - window.innerHeight / 2 - 120;
+        neweyeball.className = "ball"
+        eyes.appendChild(neweye).appendChild(neweyeball);
+      }
+      
       // remove eye when there are more than 6 eyes
       if (balls.length > 5) { 
-        eyes.removeChild(eyes.childNodes[0]);   
+        eyes.removeChild(eyes.childNodes[0,2]);   
       };
     }
 
